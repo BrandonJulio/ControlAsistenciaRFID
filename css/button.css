@@ -1,0 +1,31 @@
+.button {
+background-color: #0768FC;
+border-radius: 45px;
+border: none;
+color: #fff;
+cursor: pointer;
+font-size: 15px;
+padding: 10px 15px;
+text-align: center;
+text-transform: uppercase;
+
+width: auto;
+}
+.button:hover {
+background-color: #3BB40E;
+color: #fff;
+}
+
+
+.image-fondo {
+    background-image: url("fondo1.jpg");
+    background-size: cover;
+}
+.cabecera{
+  color: #fff;
+  height: 200px;
+  line-height: 500px;
+  text-align: center;
+  vertical-align: middle;
+  text-shadow: #111 0px 0px 10px;
+}
