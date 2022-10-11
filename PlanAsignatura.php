@@ -64,43 +64,9 @@ $Usuario = $_SESSION['Usuario'];
                             <div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
                             Menu Principal
                         </a>
-                        <div class="sb-sidenav-menu-heading">Interfaz Principal</div>
-
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                            aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Gestión General
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
-                            data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#pagesCollapseAuth" aria-expanded="false"
-                                    aria-controls="pagesCollapseAuth">Area Academica
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
-                                    data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                            href="PlanAsignatura.php">Plan de Asignaturas</a><a class="nav-link"
-                                            href="RelacionDocente.php">Relación Docente</a><a class="nav-link"
-                                            href="CargaAcademica.php">Carga Academica</a>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#pagesCollapseError" aria-expanded="false"
-                                    aria-controls="pagesCollapseError">Area Administrativa
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
-                                    data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                            href="GestionDocente.php">Gestión de Docente</a><a class="nav-link"
-                                            href="GestionEstudiante.php">Gestión Estudiante</a><a class="nav-link"
-                                            href="GestionPrograma.php">Gestión de programa</a></nav>
-                                </div>
-                            </nav>
-                        </div>
+                        <?php
+                        include "MenuOpciones.php"
+                        ?>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Estas en:</div>

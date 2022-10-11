@@ -60,45 +60,9 @@ $Usuario = $_SESSION['Usuario'];
                             <div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
                             Menu Principal
                         </a>
-                        <div class="sb-sidenav-menu-heading">Interfaz Principal</div>
-
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                            aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Gestión General
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
-                            data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#pagesCollapseAuth" aria-expanded="false"
-                                    aria-controls="pagesCollapseAuth">Area Academica
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne"
-                                    data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                            href="GestionDocente.php">Gestión de Docentes</a><a class="nav-link"
-                                            href="GestionEstudiante.php">Gestión de Estudiantes</a><a class="nav-link"
-                                            href="GestionAula.php">Gestión de Aulas</a><a class="nav-link"
-                                            href="GestionMateria.php">Gestión de Materias</a></nav>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse"
-                                    data-target="#pagesCollapseError" aria-expanded="false"
-                                    aria-controls="pagesCollapseError">Area Administrativa
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
-                                    data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link"
-                                            href="GestionFacultad.php">Gestión de Facultad</a><a class="nav-link"
-                                            href="GestionJefeDepartamento.php">Gestión Jefe de Departamento</a><a
-                                            class="nav-link" href="GestionPrograma.php">Gestión de programa</a><a
-                                            class="nav-link" href="GestionUsuario.php">Gestión de Usuarios</a></nav>
-                                </div>
-                            </nav>
-                        </div>
+                        <?php
+                        include "MenuOpciones.php"
+                        ?>
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Estas en:</div>
@@ -300,7 +264,8 @@ $Usuario = $_SESSION['Usuario'];
 
 
                                                         <select class="form-control" name="NombrePrograma">
-                                                            <option value="0"><b>Seleccione un Programa Academico</b></option>
+                                                            <option value="0"><b>Seleccione un Programa Academico</b>
+                                                            </option>
                                                             <?php
                                             $query = $mysqli->query("SELECT * FROM programa");
                                             while ($valores = mysqli_fetch_array($query)) {
@@ -315,7 +280,8 @@ $Usuario = $_SESSION['Usuario'];
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label class="control-label"><b>Dirección de domicilio</b></label>
+                                                        <label class="control-label"><b>Dirección de
+                                                                domicilio</b></label>
                                                         <input type="text" class="form-control" name="Direccion"
                                                             placeholder="Digite la Dirección"
                                                             pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ#/°- ]{1,60}"
