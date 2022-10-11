@@ -76,21 +76,6 @@ $Usuario = $_SESSION['Usuario'];
                 </div>
               </nav>
             </div>
-            <div class="sb-sidenav-menu-heading">Otras Seciones</div>
-            <a class="nav-link" href="charts.html">
-              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-              Graficos
-            </a><a class="nav-link" href="tabla.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-              Consultas
-            </a>
-
-            </a><a class="nav-link" href="http://www2.unicesar.edu.co/unicesar/hermesoft/vortal/miVortal/logueo.jsp">
-              <div class="sb-nav-link-icon"><i></i></div>
-              Vortal Hermesoft
-            </a>
-            
-          </div>
         </div>
         <div class="sb-sidenav-footer">
           <div class="small">Estas en:</div>

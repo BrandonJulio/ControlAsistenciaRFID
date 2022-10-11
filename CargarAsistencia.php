@@ -140,7 +140,7 @@ while ($row = $sel->fetch_assoc()) {
                             }
                             function openModelPDF(url) {
                                 $('#modalPdf').modal('show');
-                                $('#iframePDF').attr('src','<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/sistema/'; ?>'+url);
+                                $('#iframePDF').attr('src','<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/ControlAsistenciaRFID/'; ?>'+url);
                             }
         </script>
 

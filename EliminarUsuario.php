@@ -12,8 +12,8 @@ if(isset($_GET['Identificacion'])) {
   if(!$result) {
     die("Ha ocurrido un error.");
   }else{
-    $_SESSION['message'] = 'Usuario Eliminado Satisfactoriamente';
-    $_SESSION['message_type'] = 'danger';
+      $_SESSION['message'] = 'Usuario Eliminado Satisfactoriamente';
+      $_SESSION['message_type'] = 'danger';
   }
 
   header('Location: GestionUsuario.php');

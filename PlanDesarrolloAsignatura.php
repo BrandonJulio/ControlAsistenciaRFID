@@ -27,12 +27,13 @@ $Usuario = $_SESSION['Usuario'];
 	<meta name="author" content="" />
 	<title>Plan de Desarrollo de Asignatura</title>
 	<link href="css/styles.css" rel="stylesheet" />
+    <link href="css/principal.css" rel="stylesheet" />
 
 	<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="sb-nav-fixed">
+<body background="imagenes/U.jpg" class="body2" class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<a class="navbar-brand" href="index.php">Control de Asistencia</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
 
@@ -54,7 +55,7 @@ $Usuario = $_SESSION['Usuario'];
 					<div class="nav">
 						<div class="sb-sidenav-menu-heading">Plan de Desarrollo Asignatura</div>
 						<a class="nav-link" href="principal.php">
-							<div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+							<div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
 							Menu Principal
 						</a>
 						<div class="sb-sidenav-menu-heading">Interfaz Principal</div>
@@ -78,20 +79,6 @@ $Usuario = $_SESSION['Usuario'];
                                     </div>
                                 </nav>
                             </div>
-						<div class="sb-sidenav-menu-heading">Otras Seciones</div>
-						<a class="nav-link" href="charts.html">
-							<div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-							Graficos
-						</a><a class="nav-link" href="tabla.php">
-							<div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-							Consultas
-						</a>
-
-						</a><a class="nav-link" href="http://www2.unicesar.edu.co/unicesar/hermesoft/vortal/miVortal/logueo.jsp">
-							<div class="sb-nav-link-icon"><i></i></div>
-							Vortal Hermesoft
-						</a>
-					</div>
 				</div>
 				<div class="sb-sidenav-footer">
 					<div class="small">Estas en:</div>
@@ -125,13 +112,13 @@ $Usuario = $_SESSION['Usuario'];
                     <div class="title">
                             <div class="row">
                                 <div class="col-lg-12">
-
+                                <?php if ($TipoUsuario != "Estudiante") { ?>
                                     <form action="insertaplandesarrollo.php" method="POST">
                                     <div class="row">
                                     <div class="col-lg-4">
 
                                     <div class="form-group">
-                                        <label>Codigo Plan</label>
+                                        <label><b>Código Plan</b></label>
                                         <br>
                                         <select class="form-control" name="CodigoPlanAsignatura">
                                             <option value="0">--------</option>
@@ -148,7 +135,7 @@ $Usuario = $_SESSION['Usuario'];
                                     <div class="col-lg-4">
                                         <div class="form-group">
 
-                                        <label>Docente</label>
+                                        <label><b>Docente</b></label>
                                         <br>
                                         <select name="Docente" class="form-control">
                                             <option value="0">--------</option>
@@ -164,7 +151,7 @@ $Usuario = $_SESSION['Usuario'];
                                     </div>
                                     <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label>Codigo y Materia</label>
+                                        <label><b>Código y Materia</b></label>
                                         <br>
                                         <select name="CodigoMateria" class="form-control">
                                             <option value="0">--------</option>
@@ -180,7 +167,7 @@ $Usuario = $_SESSION['Usuario'];
                                     <div class="col-lg-3">
 
                                     <div class="form-group">
-                                        <label>Programa</label>
+                                        <label><b>Programa</b></label>
                                         <br>
                                         <select class="form-control" name="Programa">
                                             <option value="0">--------</option>
@@ -199,7 +186,7 @@ $Usuario = $_SESSION['Usuario'];
                                     <div class="col-lg-3">
 
                                     <div class="form-group">
-                                        <label>Facultad</label>
+                                        <label><b>Facultad</b></label>
                                         <br>
                                         <select class="form-control" name="Facultad">
                                             <option value="0">--------</option>
@@ -214,7 +201,7 @@ $Usuario = $_SESSION['Usuario'];
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label class="control-label">Tipo de Asignatura</label>
+                                            <label class="control-label"><b>Tipo de Asignatura</b></label>
                                             <select class="form-control" name="TipoAsignatura"  required="required">
                                                 <option>-------</option>
                                                 <option value="Teorica">Teorica</option>
@@ -226,7 +213,7 @@ $Usuario = $_SESSION['Usuario'];
                                     </div>
                                      <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label class="control-label">Naturaleza de la Asignatura</label>
+                                            <label class="control-label"><b>Naturaleza de la Asignatura</b></label>
                                             <select class="form-control" name="NaturalezaAsignatura"  required="required">
                                                 <option>-------</option>
                                                 <option value="Habilitable">Habilitable</option>
@@ -237,7 +224,7 @@ $Usuario = $_SESSION['Usuario'];
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label class="control-label">Periodo Academico</label>
+                                            <label class="control-label"><b>Periodo Academico</b></label>
                                                 <input type="text" class="form-control" name="PeriodoAcademico"
                                                 placeholder="Digite el Periodo Academico" minlength="3" maxlength="6"
                                                
@@ -248,14 +235,14 @@ $Usuario = $_SESSION['Usuario'];
 
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label class="control-label">Fecha de Inicio</label>
+                                            <label class="control-label"><b>Fecha de Inicio</b></label>
                                             <input class="form-control" type="date" name="FechaInicio"
                                                 placeholder="*Ingrese Fecha de inicio" required="required">
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label class="control-label">Total de Horas</label>
+                                            <label class="control-label"><b>Total de Horas</b></label>
                                                 <input type="text" class="form-control" name="TotalHoras"
                                                 placeholder="Digite el total de horas" minlength="1" maxlength="2"
                                                
@@ -264,7 +251,7 @@ $Usuario = $_SESSION['Usuario'];
                                     </div>
                                     <div class="col-lg-3">
                                         <div class="form-group">
-                                            <label class="control-label">Fecha de Finalización</label>
+                                            <label class="control-label"><b>Fecha de Finalización</b></label>
                                             <input class="form-control" type="date" name="FechaFinalizacion"
                                                 placeholder="*Ingrese Fecha de Finalización" required="required">
                                         </div>
@@ -278,13 +265,15 @@ $Usuario = $_SESSION['Usuario'];
                                             class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar</button>
                                 </div>
                                     </form>
+                                    <?php } ?>
                                 </div>
                             </div>
                     </div>
                </div>
 
 
-
+               <div class="container-fluid mb-1">
+                            <div class="card shadow-lg border-0 rounded-lg mt-3">
                         <div class="card-body">
 							<div class="table-responsive">
 								<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -344,13 +333,14 @@ $Usuario = $_SESSION['Usuario'];
 								</table>
 							</div>
 						</div>
+                        </div></div>
            
        </div>
     </main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid">
 					<div class="d-flex align-items-center justify-content-between small">
-						<div class="text-muted">Copyright &copy; Creado por KS 2020</div>
+						<div class="text-muted">Copyright &copy; Creado por BJ 2022</div>
 						<div>
 							<a href="#">Politicas de privacidad</a>
 							&middot;

@@ -30,9 +30,6 @@ if ($_POST) {
 		$tipousuario_c = ($TipoUsuario);
 
 
-		if ($usuario_bd != $usuario_c) {
-			echo "Verifique el usuario";
-		}
 
 		if ($password_bd == $pass_c and $usuario_bd == $usuario_c and $tipousuario_bd == $tipousuario_c) {
 
@@ -42,12 +39,22 @@ if ($_POST) {
 
 
 			header("Location: principal.php");
-		} else {
-
-			echo "Verifique las credenciales";
-		}
-	} else {
-		echo "Verifique tipo de usuario";
+		} 
+	} if($password_bd != $pass_c and $usuario_bd == $usuario_c and $tipousuario_bd == $tipousuario_c) {
+		echo" 
+			<script language='javascript'> 
+			alert('ERROR CONTRASEÑA INCORRECTA') 
+			window.location='index.php' 
+			</script>"; 
+			exit(); 
+	}
+	else{
+		echo" 
+			<script language='javascript'> 
+			alert('VERIFIQUE SUS CREDENCIALES') 
+			window.location='index.php' 
+			</script>"; 
+			exit(); 
 	}
 }
 
@@ -81,10 +88,8 @@ if ($_POST) {
 				<div class="container mb-1">
 					<div class="row justify-content-center">
 						<div class="col-lg-5">
-
-
 							<div class="card shadow-lg border-0 rounded-lg mt-2">
-								<div class="card-body">
+								<div class="card card-body">
 									<p><img src="logoupc.png" width="150" height="145">
 										<h5 class="text-center font-weight-light mt-1">Iniciar Sesión en</h5>
 										<h3 class="text-center font-weight-light mt-1"><b>Control de Asistencias</b></b></h3>
@@ -93,9 +98,14 @@ if ($_POST) {
 										<div class="form-group"><label class="small mb-1" for="Usuario">Usuario</label><input class="form-control py-4" name="Usuario" type="text" placeholder="Ingrese Usuario" autofocus="" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,30}" 
                                             required="required" minlength="3" maxlength="15" title="Solamente se admiten caracteres" /></div>
 
-										<div class="form-group"><label class="small mb-1" for="TipoUsuario">Tipo de Usuario</label><input class="form-control py-4" name="TipoUsuario" type="text" placeholder="Ingrese tipo de Usuario" required="" /></div>
-
-
+										<!--<div class="form-group"><label class="small mb-1" for="TipoUsuario">Tipo de Usuario</label><input class="form-control py-4" name="TipoUsuario" type="text" placeholder="Ingrese tipo de Usuario" required="" />-->
+										<label>Tipo de Usuario</label>
+										<select class="form-control" name="TipoUsuario"  required="required">
+													<option value="Administrador">Administrador</option>
+													<option value="Docente">Docente</option>
+													<option value="Estudiante">Estudiante</option>
+													<option value="JefeDepartamento">Jefe de Departamento</option>
+												</select> 
 										<div class="form-group"><label class="small mb-1" for="inputPassword">Contraseña</label><input class="form-control py-4" id="inputPassword" name="Contraseña" type="password" placeholder="Ingrese Contraseña" required="" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ 0-9]{1,30}" 
                                             required="required" minlength="4" maxlength="15" title="Solamente se admiten caracteres"/></div>
 										<div class="form-group">

@@ -1,0 +1,8 @@
+.background-image {
+    filter: blur(5px);
+}
+.body2{
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -26,12 +26,13 @@ $Usuario = $_SESSION['Usuario'];
   <meta name="author" content="" />
   <title>Asistencia</title>
   <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/principal.css" rel="stylesheet" />
 
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="sb-nav-fixed">
+<body background="imagenes/U.jpg" class="body2" class="sb-nav-fixed">
   <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Control de Asistencia</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
 
@@ -53,7 +54,7 @@ $Usuario = $_SESSION['Usuario'];
           <div class="nav">
             <div class="sb-sidenav-menu-heading">Asistencia</div>
             <a class="nav-link" href="principal.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+              <div class="sb-nav-link-icon"><i class="fa fa-bars"></i></div>
               Menu Principal
             </a>
             <div class="sb-sidenav-menu-heading">Interfaz Principal</div>
@@ -77,21 +78,7 @@ $Usuario = $_SESSION['Usuario'];
                                     </div>
                                 </nav>
                             </div>
-            <div class="sb-sidenav-menu-heading">Otras Seciones</div>
-            <a class="nav-link" href="charts.html">
-              <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-              Graficos
-            </a><a class="nav-link" href="tabla.php">
-              <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-              Consultas
-            </a>
-
-            </a><a class="nav-link" href="http://www2.unicesar.edu.co/unicesar/hermesoft/vortal/miVortal/logueo.jsp">
-              <div class="sb-nav-link-icon"><i></i></div>
-              Vortal Hermesoft
-            </a>
             
-          </div>
         </div>
         <div class="sb-sidenav-footer">
           <div class="small">Estas en:</div>
@@ -133,7 +120,8 @@ $Usuario = $_SESSION['Usuario'];
             </div>
 
 
-
+            <div class="container-fluid mb-1">
+                            <div class="card shadow-lg border-0 rounded-lg mt-3">
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -177,13 +165,13 @@ $Usuario = $_SESSION['Usuario'];
                 </table>
               </div>
             </div>
-
+            </div></div>
           </div>
       </main>
       <footer class="py-4 bg-light mt-auto">
         <div class="container-fluid">
           <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Creado por KS 2020</div>
+            <div class="text-muted">Copyright &copy; Creado por BJ 2022</div>
             <div>
               <a href="#">Politicas de privacidad</a>
               &middot;
