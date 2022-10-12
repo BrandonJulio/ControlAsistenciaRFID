@@ -11,6 +11,7 @@ if (!isset($_SESSION['Identificacion'])) {
 $Identificacion = $_SESSION['Identificacion'];
 $TipoUsuario = $_SESSION['TipoUsuario'];
 $Usuario = $_SESSION['Usuario'];
+$acciones = in_array($TipoUsuario, ["Administrador", "JefeDepartamento", "Docente"]);
 ?>
 
 
@@ -146,14 +147,16 @@ $Usuario = $_SESSION['Usuario'];
                             <div class="card shadow-lg border-0 rounded-lg mt-3">
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>Codigo y materia</th>
                                                     <th>Grupo</th>
                                                     <th>Docente</th>
                                                     <th>Fecha de registro</th>
-                                                    <th>Acción</th>
+                                                    <?php if($acciones): ?>
+                                                        <th>Acción</th>
+                                                    <?php endif; ?>
 
                                                 </tr>
                                             </thead>
@@ -169,7 +172,8 @@ $Usuario = $_SESSION['Usuario'];
                                                     <td><?php echo $row['Grupo']; ?></td>
                                                     <td><?php echo $row['Docente']; ?></td>
                                                     <td><?php echo $row['FechaRegistro']; ?></td>
-                                                    <td>
+                                                    <?php if($acciones): ?>
+                                                        <td>
                                                         <a href="EditarUsuario.php?Identificacion=<?php echo $row['Identificacion'] ?>"
                                                             class="btn btn-secondary">
                                                             <i class="fas fa-marker"></i>
@@ -179,6 +183,7 @@ $Usuario = $_SESSION['Usuario'];
                                                             <i class="far fa-trash-alt"></i>
                                                         </a>
                                                     </td>
+                                                 <?php endif; ?>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>

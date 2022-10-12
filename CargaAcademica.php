@@ -8,6 +8,7 @@ if (!isset($_SESSION['Identificacion'])) {
 $Identificacion = $_SESSION['Identificacion'];
 $TipoUsuario = $_SESSION['TipoUsuario'];
 $Usuario = $_SESSION['Usuario'];
+$acciones = in_array($TipoUsuario, ["Administrador", "JefeDepartamento", "Docente"]);
 ?>
 
 
@@ -24,7 +25,7 @@ $Usuario = $_SESSION['Usuario'];
     <title>Carga Academica</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/principal.css" rel="stylesheet" />
-
+    <link href="css/carga-academica-styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
         crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous">
@@ -89,7 +90,6 @@ $Usuario = $_SESSION['Usuario'];
                     </div>
                     <?php
                     } ?>
-
 
                     <div class="row">
                         <div class="col-md-12">
@@ -237,9 +237,6 @@ $Usuario = $_SESSION['Usuario'];
                                                 </div>
                                             </div>
 
-
-
-
                                             <!-- AQUI HAGO EL SEGUNDO DIA-->
                                             <div class="row">
                                                 <div class="col-lg-3">
@@ -337,12 +334,11 @@ $Usuario = $_SESSION['Usuario'];
                             </div>
                         </div>
 
-
                         <div class="container-fluid mb-1">
                             <div class="card shadow-lg border-0 rounded-lg mt-3">
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>Codigo/Materia</th>
@@ -358,9 +354,9 @@ $Usuario = $_SESSION['Usuario'];
                                                     <th>Hora fin</th>
                                                     <th>Aula</th>
                                                     <th>Fecha de registro</th>
+                                                    <?php if($acciones): ?>
                                                     <th>Acción</th>
-
-
+                                                    <?php endif; ?>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -384,6 +380,7 @@ $Usuario = $_SESSION['Usuario'];
                                                     <td><?php echo $row['HoraFin2']; ?></td>
                                                     <td><?php echo $row['Aula2']; ?></td>
                                                     <td><?php echo $row['FechaRegistro']; ?></td>
+                                                    <?php if($acciones): ?>
                                                     <td>
                                                         <a href="EditarUsuario.php?Identificacion=<?php echo $row['Identificacion'] ?>"
                                                             class="btn btn-secondary">
@@ -394,6 +391,7 @@ $Usuario = $_SESSION['Usuario'];
                                                             <i class="far fa-trash-alt"></i>
                                                         </a>
                                                     </td>
+                                                    <?php endif; ?>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>

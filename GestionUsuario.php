@@ -121,7 +121,6 @@ $resultado = $mysqli->query($sql);
                                 </div>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading">Otras Seciones</div>
                         <div class="sb-sidenav-footer">
                             <div class="small">Estas en:</div>
                             Gestión de Usuarios
@@ -190,7 +189,7 @@ $resultado = $mysqli->query($sql);
                                 <div class="card shadow-lg border-0 rounded-lg mt-3">
                                     <div class="card-body">
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTable" width="100%"cellspacing="0"
+                                            <table class="table table-bordered" width="100%"cellspacing="0"
                                                 cellspacing="0">
                                                 <thead class="thead-dark">
                                                     <tr>
@@ -219,7 +218,7 @@ $resultado = $mysqli->query($sql);
 
 
                                                             <a href="EditarUsuario.php?Identificacion=<?php echo $row['Identificacion'] ?>"
-                                                                class="btn btn-secondary">
+                                                                class="btn btn-secondary ">
                                                                 <i class="fas fa-marker">
 
 

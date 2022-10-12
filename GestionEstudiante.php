@@ -341,7 +341,7 @@ $Usuario = $_SESSION['Usuario'];
                         <div class="card shadow-lg border-0 rounded-lg mt-2">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Identificacion</th>
@@ -352,7 +352,6 @@ $Usuario = $_SESSION['Usuario'];
                                                 <th>Fecha Nacimiento</th>
                                                 <th>Sexo</th>
                                                 <th>Celular</th>
-
                                                 <th>Acción</th>
 
 

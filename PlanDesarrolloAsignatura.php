@@ -12,6 +12,7 @@ if (!isset($_SESSION['Identificacion'])) {
 $Identificacion = $_SESSION['Identificacion'];
 $TipoUsuario = $_SESSION['TipoUsuario'];
 $Usuario = $_SESSION['Usuario'];
+$acciones = in_array($TipoUsuario, ["Administrador", "JefeDepartamento", "Docente"]);
 ?>
 
 
@@ -268,7 +269,7 @@ $Usuario = $_SESSION['Usuario'];
                             <div class="card shadow-lg border-0 rounded-lg mt-3">
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>Codigo</th>
@@ -282,7 +283,9 @@ $Usuario = $_SESSION['Usuario'];
                                                     <th>Fecha Inicio</th>
                                                     <th>Total Horas</th>
                                                     <th>Fecha Fin</th>
-                                                    <th>Acción</th>
+                                                    <?php if($acciones): ?>
+                                                        <th>Acción</th>
+                                                    <?php endif; ?>
 
 
                                                 </tr>
@@ -307,10 +310,7 @@ $Usuario = $_SESSION['Usuario'];
                                                     <td><?php echo $row['TotalHoras']; ?></td>
 
                                                     <td><?php echo $row['FechaFinalizacion']; ?></td>
-
-
-
-
+                                                    <?php if($acciones): ?>
                                                     <td>
                                                         <a href="EditarUsuario.php?Identificacion=<?php echo $row['Identificacion'] ?>"
                                                             class="btn btn-secondary">
@@ -321,6 +321,7 @@ $Usuario = $_SESSION['Usuario'];
                                                             <i class="far fa-trash-alt"></i>
                                                         </a>
                                                     </td>
+                                                    <?php endif; ?>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
