@@ -11,9 +11,7 @@ if (!isset($_SESSION['Identificacion'])) {
 $Identificacion = $_SESSION['Identificacion'];
 $TipoUsuario = $_SESSION['TipoUsuario'];
 $Usuario = $_SESSION['Usuario'];
-?>
-
-
+?>  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +89,9 @@ $Usuario = $_SESSION['Usuario'];
                         </button>
                     </div>
                     <?php
-							} ?>
+							unset($_SESSION['message']);
+                            
+                            } ?>
 
 
                     <div class="row">
@@ -188,7 +188,7 @@ $Usuario = $_SESSION['Usuario'];
                                                         <label class="control-label"><b>Correo electrónico</b></label>
                                                         <input class="form-control" type="email" name="Correo"
                                                             placeholder="Digite el Correo electrónico"
-                                                            required="required">
+                                                            required="required" minlength="7" maxlength="50">
                                                     </div>
                                                 </div>
                                             </div>
@@ -208,7 +208,7 @@ $Usuario = $_SESSION['Usuario'];
                                                         <input type="text" class="form-control" name="Ciudad"
                                                             placeholder="Digite la ciudad"
                                                             pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,20}" required="required"
-                                                            minlength="5" maxlength="30"
+                                                            minlength="5" maxlength="40"
                                                             title="Solamente se admiten caracteres">
                                                     </div>
                                                 </div>
@@ -223,7 +223,7 @@ $Usuario = $_SESSION['Usuario'];
                                                         <input type="text" class="form-control" name="Departamento"
                                                             placeholder="Digite el Departamento"
                                                             pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{1,20}" required="required"
-                                                            minlength="5" maxlength="20"
+                                                            minlength="5" maxlength="40"
                                                             title="Solamente se admiten caracteres">
                                                     </div>
                                                 </div>
@@ -265,7 +265,9 @@ $Usuario = $_SESSION['Usuario'];
                                                     <th>Segundo Apellido</th>
                                                     <th>Fecha Nacimiento</th>
                                                     <th>Sexo</th>
+                                                    <th>Correo</th>
                                                     <th>Celular</th>
+                                                    <th>Estado</th>
                                                     <th>Acción</th>
 
 
@@ -286,16 +288,15 @@ $Usuario = $_SESSION['Usuario'];
                                                     <td><?php echo $row['SegundoApellido']; ?></td>
                                                     <td><?php echo $row['FechaNacimiento']; ?></td>
                                                     <td><?php echo $row['Sexo']; ?></td>
+                                                    <td><?php echo $row['Correo']; ?></td>
                                                     <td><?php echo $row['Celular']; ?></td>
+                                                    <td><?php echo $row['Estado']; ?></td>
                                                     <td>
-                                                        <a href="EditarUsuario.php?Identificacion=<?php echo $row['Identificacion'] ?>"
+                                                        <a href="EditarDocente.php?Identificacion=<?php echo $row['Identificacion'] ?>"
                                                             class="btn btn-secondary">
                                                             <i class="fas fa-marker"></i>
                                                         </a>
-                                                        <a href="EliminarUsuario.php?Identificacion=<?php echo $row['Identificacion'] ?>"
-                                                            class="btn btn-danger">
-                                                            <i class="far fa-trash-alt"></i>
-                                                        </a>
+    
                                                     </td>
                                                 </tr>
                                                 <?php } ?>

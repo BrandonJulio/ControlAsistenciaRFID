@@ -378,10 +378,6 @@ $Usuario = $_SESSION['Usuario'];
                                                         class="btn btn-secondary">
                                                         <i class="fas fa-marker"></i>
                                                     </a>
-                                                    <a href="EliminarUsuario.php?Identificacion=<?php echo $row['Identificacion'] ?>"
-                                                        class="btn btn-danger">
-                                                        <i class="far fa-trash-alt"></i>
-                                                    </a>
                                                 </td>
                                             </tr>
                                             <?php } ?>
